@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A7 Train Ticket Reservation</title>
+    <link rel="stylesheet" href="SaveTD.css">
+    <script src="Train.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>A7 Train Ticket Reservation</h1>
+        <form id="ticketForm" action="https://formspree.io/f/mdknjvny" method="POST">
+            <div class="form-group">
+                <label for="source">Source Station</label>
+                <input type="text" id="source" name="source" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination Station</label>
+                <input type="text" id="destination" name="destination" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date of Journey</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="class">Class</label>
+                <select id="class" name="class" required>
+                    <option value="" disabled selected hidden>Select</option>
+                    <option value="Sleeper">Sleeper</option>
+                    <option value="3AC">3 AC</option>
+                    <option value="2AC">2 AC</option>
+                    <option value="1AC">1 AC</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quota">Quota</label>
+                <select id="quota" name="quota" required>
+                    <option value="" disabled selected hidden>Select</option>
+                    <option value="General">General</option>
+                    <option value="Ladies">Ladies</option>
+                    <option value="Senior Citizen">Senior Citizen</option>
+                    <option value="Premium Tatkal">Premium Tatkal</option>
+                </select>
+            </div>
+
+            <div id="passengerContainer" class="form-group">
+                <label>Passenger Details</label>
+                <div class="passenger" id="passenger1">
+                    <input type="text" name="passengerName[]" placeholder="Name" required>
+                    <input type="number" name="passengerAge[]" placeholder="Age" min="1" required>
+                    <select name="passengerGender[]" required>
+                        <option value="">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button type="button" class="add-passenger">+</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+
+            <input type="hidden" name="_replyto" value="athulvgece@gmail.com">
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
