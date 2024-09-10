@@ -33,4 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const value = event.target.value;
         event.target.value = value.replace(/[^\d]/g, ''); // Remove any non-digit characters
     });
+    
 });
